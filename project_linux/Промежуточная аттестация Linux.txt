@@ -1,0 +1,271 @@
+
+# 1 Используйте команды операционной системы Linux и создайте две новых директории – «Игрушки для школьников» и «Игрушки для дошколят»
+
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir Игрушки_для_школьников
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir Игрушки_для_дошколят
+student@Ubuntu-MySQL-VirtualBox:~$ ls -l
+итого 72
+-rw-rw-r-- 1 student student  296 апр 24 08:08 cleardir
+drwxrwxr-x 2 student student 4096 апр 24 08:03 DELDIR
+-rw-r--r-- 1 student student 8980 апр 22  2019 examples.desktop
+drwxrwxr-x 2 student student 4096 апр 20 14:38 lws
+-rw-rw-r-- 1 student student  106 апр 24 07:13 print100
+drwxrwx--- 1 root    vboxsf     0 апр  3 05:30 shared
+-rw-rw-r-- 1 student student   46 апр  9 13:01 test.txt
+drwxr-xr-x 2 student student 4096 апр 22  2019 Видео
+drwxr-xr-x 2 student student 4096 апр 22  2019 Документы
+drwxr-xr-x 3 student student 4096 апр 24 07:57 Загрузки
+drwxrwxr-x 2 student student 4096 апр 26 14:51 Игрушки_для_дошколят
+drwxrwxr-x 2 student student 4096 апр 26 14:51 Игрушки_для_школьников
+drwxr-xr-x 2 student student 4096 апр 22  2019 Изображения
+drwxr-xr-x 2 student student 4096 апр 22  2019 Музыка
+drwxr-xr-x 2 student student 4096 апр 22  2019 Общедоступные
+drwxr-xr-x 2 student student 4096 апр  4 14:32 Рабочий стол
+drwxr-xr-x 2 student student 4096 апр 22  2019 Шаблоны
+student@Ubuntu-MySQL-VirtualBox:~$ 
+
+# 2 Создайте в директории «Игрушки для школьников» текстовые файлы - «Роботы», «Конструктор», «Настольные игры»
+
+student@Ubuntu-MySQL-VirtualBox:~$ cd Игрушки_для_школьников/
+student@Ubuntu-MySQL-VirtualBox:~/Игрушки_для_школьников$ cat > Роботы
+Роботы
+student@Ubuntu-MySQL-VirtualBox:~/Игрушки_для_школьников$ cat > Конструктор
+Конструктор
+student@Ubuntu-MySQL-VirtualBox:~/Игрушки_для_школьников$ cat > Настольные_игры
+Настольные_игры
+student@Ubuntu-MySQL-VirtualBox:~/Игрушки_для_школьников$ ll
+итого 20
+drwxrwxr-x  2 student student 4096 апр 26 14:56 ./
+drwxr-xr-x 28 student student 4096 апр 26 14:51 ../
+-rw-rw-r--  1 student student   23 апр 26 14:56 Конструктор
+-rw-rw-r--  1 student student   30 апр 26 14:56 Настольные_игры
+-rw-rw-r--  1 student student   13 апр 26 14:55 Роботы
+
+# 3 Создайте в директории «Игрушки для дошколят» текстовые файлы «Мягкие игрушки», «Куклы», «Машинки»
+
+student@Ubuntu-MySQL-VirtualBox:~/Игрушки_для_школьников$ cd ..
+student@Ubuntu-MySQL-VirtualBox:~$ cd Игрушки_для_дошколят/
+student@Ubuntu-MySQL-VirtualBox:~/Игрушки_для_дошколят$ touch Мягкие_игрушки Куклы Машинки
+student@Ubuntu-MySQL-VirtualBox:~/Игрушки_для_дошколят$ ls
+Куклы  Машинки  Мягкие_игрушки
+student@Ubuntu-MySQL-VirtualBox:~/Игрушки_для_дошколят$ 
+
+# 4 Объединить 2 директории в одну «Имя Игрушки»
+
+student@Ubuntu-MySQL-VirtualBox:~/Игрушки_для_дошколят$ cd ..
+student@Ubuntu-MySQL-VirtualBox:~$ 
+student@Ubuntu-MySQL-VirtualBox:~$ mkdir Имя_Игрушки
+student@Ubuntu-MySQL-VirtualBox:~$ 
+student@Ubuntu-MySQL-VirtualBox:~$ tree
+.
+├── cleardir
+├── DELDIR
+├── examples.desktop
+├── lws
+│   ├── Dockerfile
+│   └── test.txt.bak
+├── print100
+├── shared [error opening dir]
+├── test.txt
+├── Видео
+├── Документы
+├── Загрузки
+│   └── files
+│       └── file.backup
+├── Игрушки_для_дошколят
+│   ├── Куклы
+│   ├── Машинки
+│   └── Мягкие_игрушки
+├── Игрушки_для_школьников
+│   ├── Конструктор
+│   ├── Настольные_игры
+│   └── Роботы
+├── Изображения
+├── Имя_Игрушки
+├── Музыка
+├── Общедоступные
+├── Рабочий стол
+└── Шаблоны
+
+15 directories, 13 files
+student@Ubuntu-MySQL-VirtualBox:~$ mv Игрушки_для_дошколят/   Игрушки_для_школьников/ Имя_Игрушки/
+student@Ubuntu-MySQL-VirtualBox:~$ ls
+cleardir          lws       test.txt   Загрузки     Музыка         Шаблоны
+DELDIR            print100  Видео      Изображения  Общедоступные
+examples.desktop  shared    Документы  Имя_Игрушки  Рабочий стол
+student@Ubuntu-MySQL-VirtualBox:~$ tree
+.
+├── cleardir
+├── DELDIR
+├── examples.desktop
+├── lws
+│   ├── Dockerfile
+│   └── test.txt.bak
+├── print100
+├── shared [error opening dir]
+├── test.txt
+├── Видео
+├── Документы
+├── Загрузки
+│   └── files
+│       └── file.backup
+├── Изображения
+├── Имя_Игрушки
+│   ├── Игрушки_для_дошколят
+│   │   ├── Куклы
+│   │   ├── Машинки
+│   │   └── Мягкие_игрушки
+│   └── Игрушки_для_школьников
+│       ├── Конструктор
+│       ├── Настольные_игры
+│       └── Роботы
+├── Музыка
+├── Общедоступные
+├── Рабочий стол
+└── Шаблоны
+
+15 directories, 13 files
+
+# 5 Переименовать директорию, дав ему новое имя (Игрушки).
+
+student@Ubuntu-MySQL-VirtualBox:~$ mv Имя_Игрушки/ Игрушки
+student@Ubuntu-MySQL-VirtualBox:~$ tree
+.
+├── cleardir
+├── DELDIR
+├── examples.desktop
+├── lws
+│   ├── Dockerfile
+│   └── test.txt.bak
+├── print100
+├── shared [error opening dir]
+├── test.txt
+├── Видео
+├── Документы
+├── Загрузки
+│   └── files
+│       └── file.backup
+├── Игрушки
+│   ├── Игрушки_для_дошколят
+│   │   ├── Куклы
+│   │   ├── Машинки
+│   │   └── Мягкие_игрушки
+│   └── Игрушки_для_школьников
+│       ├── Конструктор
+│       ├── Настольные_игры
+│       └── Роботы
+├── Изображения
+├── Музыка
+├── Общедоступные
+├── Рабочий стол
+└── Шаблоны
+
+15 directories, 13 files
+student@Ubuntu-MySQL-VirtualBox:~$ 
+
+# 6 Установить и удалить snap-пакет
+
+student@Ubuntu-MySQL-VirtualBox:~$ sudo apt update
+[sudo] пароль для student: 
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu xenial InRelease
+Пол:2 http://ru.archive.ubuntu.com/ubuntu xenial-updates InRelease [99,8 kB]   
+Пол:3 http://nginx.org/packages/ubuntu xenial InRelease [4 354 B]              
+Ошб:3 http://nginx.org/packages/ubuntu xenial InRelease                        
+  Следующие подписи не могут быть проверены, так как недоступен открытый ключ: NO_PUBKEY ABF5BD827BD9BF62
+Сущ:4 http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial InRelease      
+Пол:5 http://ru.archive.ubuntu.com/ubuntu xenial-backports InRelease [97,4 kB] 
+Сущ:6 https://dbeaver.io/debs/dbeaver-ce  InRelease                            
+Сущ:7 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease        
+Пол:8 http://security.ubuntu.com/ubuntu xenial-security InRelease [99,8 kB]    
+Чтение списков пакетов… Готово                                                 
+W: Ошибка GPG: http://nginx.org/packages/ubuntu xenial InRelease: Следующие подписи не могут быть проверены, так как недоступен открытый ключ: NO_PUBKEY ABF5BD827BD9BF62
+E: Репозиторий «http://nginx.org/packages/ubuntu xenial InRelease» не подписан.
+N: Обновление из этого репозитория нельзя выполнить безопасным способом, поэтому по умолчанию он отключён.
+N: Информацию о создании репозитория и настройках пользователя смотрите в справочной странице apt-secure(8).
+student@Ubuntu-MySQL-VirtualBox:~$ sudo apt install snap
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Уже установлен пакет snap самой новой версии (2013-11-29-1ubuntu2.16.04.1).
+Следующий пакет устанавливался автоматически и больше не требуется:
+  dbconfig-common dbconfig-mysql distro-info javascript-common
+  libevent-core-2.0-5 libjs-jquery libjs-sphinxdoc libjs-underscore libmcrypt4
+  php-gd php-gettext php-mcrypt php-mysql php-phpseclib php-tcpdf php7.0-gd
+  php7.0-mcrypt php7.0-mysql python3-distro-info python3-yaml
+  snapd-login-service
+Для его удаления используйте «sudo apt autoremove».
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 5 пакетов не обновлено.
+student@Ubuntu-MySQL-VirtualBox:~$ snap find opera
+Name                 Version      Publisher          Notes    Summary
+opera                98.0.4759.6  opera-software✓    -        Fast, secure, easy-to-use browser
+opera-beta           98.0.4759.3  opera-software✓    -        Fast and secure web browser
+opera-developer      99.0.4780.0  opera-software✓    -        Fast and secure web browser
+opera-proxy          1.2.4        snawoot            -        Standalone Opera VPN proxies client.
+operator-builder     0.5.0        vmware-tanzu-labs  -        A Kubebuilder plugin to accelerate the development of Kubernetes operators.
+contasimple          3.1.0        enriverd           -        Contasimple Desktop
+office365webdesktop  0.7.2        rafgui012          -        It is a simple desktop application for Office365 of the web version for linux
+xdm-snap             8.0.25       capecrusader-121   -        Experimental Builds Of The XDM Download Manger's Upcoming Version
+devoperator          1.7.1        art-hens-teeth     classic  DevOps tools
+student@Ubuntu-MySQL-VirtualBox:~$ sudo snap install opera
+opera 98.0.4759.6 from Opera (opera-software✓) installed
+student@Ubuntu-MySQL-VirtualBox:~$ snap list
+Name               Version                     Rev    Tracking       Publisher        Notes
+bare               1.0                         5      latest/stable  canonical✓       base
+chromium-ffmpeg    0.1                         30     latest/stable  canonical✓       -
+core18             20230320                    2721   latest/stable  canonical✓       base
+gnome-3-28-1804    3.28.0-19-g98f9e67.98f9e67  198    latest/stable  canonical✓       -
+gtk-common-themes  0.1-81-g442e511             1535   latest/stable  canonical✓       -
+opera              98.0.4759.6                 229    latest/stable  opera-software✓  -
+snapd              2.59.1                      18933  latest/stable  canonical✓       snapd
+student@Ubuntu-MySQL-VirtualBox:~$ sudo snap remove opera
+opera removed
+student@Ubuntu-MySQL-VirtualBox:~$ snap list
+Name               Version                     Rev    Tracking       Publisher   Notes
+bare               1.0                         5      latest/stable  canonical✓  base
+chromium-ffmpeg    0.1                         30     latest/stable  canonical✓  -
+core18             20230320                    2721   latest/stable  canonical✓  base
+gnome-3-28-1804    3.28.0-19-g98f9e67.98f9e67  198    latest/stable  canonical✓  -
+gtk-common-themes  0.1-81-g442e511             1535   latest/stable  canonical✓  -
+snapd              2.59.1                      18933  latest/stable  canonical✓  snapd
+
+# 7 Добавить задачу для выполнения каждые 3 минуты (запись во все файлы).
+
+student@Ubuntu-MySQL-VirtualBox:~$ systemctl status cron
+● cron.service - Regular background program processing daemon
+   Loaded: loaded (/lib/systemd/system/cron.service; enabled; vendor preset: ena
+   Active: active (running) since Ср 2023-04-26 14:50:07 MSK; 1h 8min ago
+     Docs: man:cron(8)
+ Main PID: 799 (cron)
+    Tasks: 1
+   Memory: 7.9M
+      CPU: 115ms
+   CGroup: /system.slice/cron.service
+           └─799 /usr/sbin/cron -f
+
+апр 26 15:30:01 Ubuntu-MySQL-VirtualBox CRON[6090]: pam_unix(cron:session): sess
+апр 26 15:39:01 Ubuntu-MySQL-VirtualBox CRON[6114]: pam_unix(cron:session): sess
+апр 26 15:39:01 Ubuntu-MySQL-VirtualBox CRON[6115]: (root) CMD (  [ -x /usr/lib/
+апр 26 15:39:01 Ubuntu-MySQL-VirtualBox CRON[6114]: pam_unix(cron:session): sess
+апр 26 15:40:01 Ubuntu-MySQL-VirtualBox CRON[6171]: pam_unix(cron:session): sess
+апр 26 15:40:01 Ubuntu-MySQL-VirtualBox CRON[6172]: (student) CMD (echo "Hi ther
+апр 26 15:40:01 Ubuntu-MySQL-VirtualBox CRON[6171]: pam_unix(cron:session): sess
+апр 26 15:50:01 Ubuntu-MySQL-VirtualBox CRON[6233]: pam_unix(cron:session): sess
+апр 26 15:50:01 Ubuntu-MySQL-VirtualBox CRON[6234]: (student) CMD (echo "Hi ther
+апр 26 15:50:01 Ubuntu-MySQL-VirtualBox CRON[6233]: pam_unix(cron:session): sess
+student@Ubuntu-MySQL-VirtualBox:~$ 
+student@Ubuntu-MySQL-VirtualBox:~$ cd /etc/apt/
+student@Ubuntu-MySQL-VirtualBox:/etc/apt$ crontab -e
+crontab: installing new crontab
+student@Ubuntu-MySQL-VirtualBox:/etc/apt$ crontab -l
+ */3 * * * * echo "Hi there! It's $(date)" ~/test.txt >> ~/lws/test.txt.bak
+student@Ubuntu-MySQL-VirtualBox:/etc/apt$ 
+
+
+
+
+
+
+
+
+
+
